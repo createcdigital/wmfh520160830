@@ -33,13 +33,13 @@
     /*--  可动态修改分享内容
     ====================================================== */
     var app = app || {};
-    app.sharUrl = "http://wmf.mz-weixin-qq.com/wmfh520160830/index.php";
+    app.sharUrl = "http://www.createcdigital.com/wmfh520160830/index.php";
     app.wechat = function(){};
     app.wechat.sharecontent = {title: "WMF携豪礼提醒您：秋运你团圆了吗",
                                  desc:"朋友，我的秋运团聚餐桌为你留了一个好位置，不点进来吗？",
                                  titleformoment:"【聚美味聚健康聚幸福】只需两步，把价值6888元WMF奈彩米新品带回家！", 
                                  url: app.sharUrl,
-                                 icon: "http://wmf.mz-weixin-qq.com/wmfh520160830/resource/assets/share-icon.jpg"
+                                 icon: "http://assetscdn.createcdigital.com/wmfh520160830/assets/share-icon.jpg"
                             };
     app.wechat.set_sharecontent = function(){
         wx.ready(function () {

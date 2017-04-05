@@ -33,14 +33,11 @@
         if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ) {
             if(!isset($_COOKIE["openid"]))
             {
-               #$url = 'http://wmf.mz-weixin-qq.com'.$_SERVER["REQUEST_URI"];
-                // $url = $_SERVER["REQUEST_URI"];
-                // setcookie("url", $url, time()+7000, "/", "wmf.mz-weixin-qq.com");
+               #$url = 'http://www.createcdigital.com'.$_SERVER["REQUEST_URI"];
+                $url = $_SERVER["REQUEST_URI"];
+                setcookie("url", $url, time()+7000, "/", "www.createcdigital.com");
 
-                // header("Location:weChat/autho.php");
-
-                $openid = uniqid("MONI_", true);
-                setcookie("openid", $openid, time()+315360000, "/", "wmf.mz-weixin-qq.com");
+                header("Location:weChat/autho.php");
             }else{}
         }else{
              $isphone = "true";
@@ -130,7 +127,7 @@
         // update wechat share content interface
         var sharecontent_formeishijie;
         function shareChange(msg) {
-            app.sharUrl = "http://wmf.mz-weixin-qq.com/wmfh520160830/index.php"+msg;
+            app.sharUrl = "http://www.createcdigital.com/wmfh520160830/index.php"+msg;
             app.wechat.sharecontent = {title: "WMF携豪礼提醒您：秋运你团圆了吗",
                                  desc:"朋友，我的秋运团聚餐桌为你留了一个好位置，不点进来吗？",
                                  titleformoment:"【聚美味聚健康聚幸福】只需两步，把价值6888元WMF奈彩米新品带回家！", 

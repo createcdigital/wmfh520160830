@@ -33,17 +33,15 @@
         if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ) {
             if(!isset($_COOKIE["openid"]))
             {
-               // #$url = 'http://wmf.mz-weixin-qq.com'.$_SERVER["REQUEST_URI"];
-               //  $url = $_SERVER["REQUEST_URI"];
-               //  setcookie("url", $url, time()+7000, "/", "wmf.mz-weixin-qq.com");
+               #$url = 'http://www.createcdigital.com'.$_SERVER["REQUEST_URI"];
+                $url = $_SERVER["REQUEST_URI"];
+                setcookie("url", $url, time()+7000, "/", "www.createcdigital.com");
 
-               //  header("Location:weChat/autho.php");
-                $openid = uniqid("MONI_", true);
-                setcookie("openid", $openid, time()+315360000, "/", "wmf.mz-weixin-qq.com");
+                header("Location:weChat/autho.php");
             }else{}
         }else{
              $isphone = "true";
-             $_COOKIE["openid"] = uniqid("MONI_", true);
+             $_COOKIE["openid"] = "";
         }
      }else{
         header("Location:/wmfh520160830/pc/index.html");
@@ -57,15 +55,15 @@
     <navi-items>
     <navi-item
         id = "share"
-        img = "http://wmf.mz-weixin-qq.com/wmfh520160830/resource/assets/share-icon.jpg"
+        img = "http://assetscdn.createcdigital.com/wmfh520160830/assets/share-icon.jpg"
         title = "WMF携豪礼提醒您：秋运你团圆了吗"
-        thumb = "http://wmf.mz-weixin-qq.com/wmfh520160830/resource/assets/share-icon.jpg"
+        thumb = "http://assetscdn.createcdigital.com/wmfh520160830/assets/share-icon.jpg"
         content = "【聚美味聚健康聚幸福】只需两步，把价值6888元WMF奈彩米新品带回家！"
         <?php
             if($_GET['sharId'] != null)
-                echo "page = \"http://wmf.mz-weixin-qq.com/wmfh520160830/index.php?channel=".$_GET['channel']."&sharId=".$_GET['sharId']."\"";
+                echo "page = \"http://www.createcdigital.com/wmfh520160830/index.php?channel=".$_GET['channel']."&sharId=".$_GET['sharId']."\"";
             else
-                echo "page = \"http://wmf.mz-weixin-qq.com/wmfh520160830/index.php?channel=".$_GET['channel']."\"";
+                echo "page = \"http://www.createcdigital.com/wmfh520160830/index.php?channel=".$_GET['channel']."\"";
         ?>
         >
     </navi-items>
@@ -110,15 +108,27 @@
         }
     </style>
 
+    <!-- 3rd party track code -->
+    <script>!(function(a,b,c,d,e,f){var g="",h=a.sessionStorage,i="__admaster_ta_param__",j="tmDataLayer"!==d?"&dl="+d:"";
+        if(a[f]={},a[d]=a[d]||[],a[d].push({startTime:+new Date,event:"tm.js"}),h){var k=a.location.search,
+        l=new RegExp("[?&]"+i+"=(.*?)(&|#|$)").exec(k)||[];l[1]&&h.setItem(i,l[1]),l=h.getItem(i),
+        l&&(g="&p="+l+"&t="+ +new Date)}var m=b.createElement(c),n=b.getElementsByTagName(c)[0];m.src="//tag.cdnmaster.cn/tmjs/tm.js?id="+e+j+g,
+        m.async=!0,n.parentNode.insertBefore(m,n)})(window,document,"script","tmDataLayer","TM-210410","admaster_tm");
+
+        function tracking(a,b,c) {
+            _smq.push(['custom',a,b,c]);
+        }
+    </script>
+    <!--end 3rd party track code-->
 
     <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
     <!--modules_files_start-->
-	<script egret="lib" src="http://wmf.mz-weixin-qq.com/wmfh520160830/libs/modules/egret/egret.min.js"></script>
-	<script egret="lib" src="http://wmf.mz-weixin-qq.com/wmfh520160830/libs/modules/egret/egret.web.min.js"></script>
-	<script egret="lib" src="http://wmf.mz-weixin-qq.com/wmfh520160830/libs/modules/game/game.min.js"></script>
-	<script egret="lib" src="http://wmf.mz-weixin-qq.com/wmfh520160830/libs/modules/game/game.web.min.js"></script>
-	<script egret="lib" src="http://wmf.mz-weixin-qq.com/wmfh520160830/libs/modules/res/res.min.js"></script>
-	<script egret="lib" src="http://wmf.mz-weixin-qq.com/wmfh520160830/libs/modules/tween/tween.min.js"></script>
+	<script egret="lib" src="http://assetscdn.createcdigital.com/wmfh520160830/libs/modules/egret/egret.min.js"></script>
+	<script egret="lib" src="http://assetscdn.createcdigital.com/wmfh520160830/libs/modules/egret/egret.web.min.js"></script>
+	<script egret="lib" src="http://assetscdn.createcdigital.com/wmfh520160830/libs/modules/game/game.min.js"></script>
+	<script egret="lib" src="http://assetscdn.createcdigital.com/wmfh520160830/libs/modules/game/game.web.min.js"></script>
+	<script egret="lib" src="http://assetscdn.createcdigital.com/wmfh520160830/libs/modules/res/res.min.js"></script>
+	<script egret="lib" src="http://assetscdn.createcdigital.com/wmfh520160830/libs/modules/tween/tween.min.js"></script>
 	<!--modules_files_end-->
 
     <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
@@ -142,9 +152,9 @@
          data-multi-fingered="2"
          data-show-fps="false" data-show-log="false"
          data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
-         <img width="25.5%" id="gzpng" style="display:none;top:63%;left:38%;position:absolute;z-index: 999;" height="auto" src="http://wmf.mz-weixin-qq.com/wmfh520160830/resource/assets/QRCode.png" />
+         <img width="25.5%" id="gzpng" style="display:none;top:63%;left:38%;position:absolute;z-index: 999;" height="auto" src="http://assetscdn.createcdigital.com/wmfh520160830/assets/QRCode.png" />
          <input id="redtext" type="text" value="秋运把健康厨房神器带回家" readOnly style="background:none;border:0;display:none;top:38.6%;margin-left:-5px;width: 100%;height: 25px;position:absolute;z-index: 999;color:#000;font-size:16px;font-weight: bold;text-align:center;" />
-         <img width="29.3%" id="qr" style="display:none;top:22%;left:35.3%;position:absolute;z-index: 999;" height="auto" src="http://wmf.mz-weixin-qq.com/wmfh520160830/resource/assets/QRCode.png" />
+         <img width="29.3%" id="qr" style="display:none;top:22%;left:35.3%;position:absolute;z-index: 999;" height="auto" src="http://assetscdn.createcdigital.com/wmfh520160830/assets/QRCode.png" />
     </div>
     <script>
         /**
@@ -159,28 +169,117 @@
     <div id="isphone" style="display:none"><?php echo $isphone; ?></div>
 
     <script>
-        function shareChange(msg) {
-            console.log("msg from egret : " + msg);
+        // base64 encode
+        function b64EncodeUnicode(str) {
+            return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+                return String.fromCharCode('0x' + p1);
+            }));
         }
-        function tracking(a,b,c) {
-            console.log("msg from egret : " + "a :" + a + "b :" + b+ "c :" + c);
-        }
-        function getDebugUser()
+        // chinese convert to uniconde
+        function uniencode(text)
         {
-            var openid = document.getElementById("openID").innerHTML;
-            var user = "james" + openid.substring(0, 2);
-            var phone = "135" + RandNum(8);
-
-            return {user: user, phone: phone};
+            text = escape(text.toString()).replace(/\+/g, "%2B");
+            var matches = text.match(/(%([0-9A-F]{2}))/gi);
+            if (matches)
+            {
+            for (var matchid = 0; matchid < matches.length; matchid++)
+            {
+            var code = matches[matchid].substring(1,3);
+            if (parseInt(code, 16) >= 128)
+            {
+            text = text.replace(matches[matchid], '\\u' + code);
+            }
+            }
+            }
+            text = text.replace('%25', '%u0025');
+            return text.replace(/%/g, "\\");;
         }
 
-        function RandNum(n){  
-            var rnd="";  
-            for(var i=0;i<n;i++)  
-                rnd+=Math.floor(Math.random()*10);  
-            return rnd;  
+        // update wechat share content interface
+        var sharecontent_formeishijie;
+        var shareurl_formeishijie = 'http://www.createcdigital.com/wmfh520160830/index.php?&channel=6';
+        function shareChange(msg) {
+
+            app.sharUrl = "http://www.createcdigital.com/wmfh520160830/index.php"+msg;
+            app.wechat.sharecontent = {title: "WMF携豪礼提醒您：秋运你团圆了吗",
+                                 desc:"朋友，我的秋运团聚餐桌为你留了一个好位置，不点进来吗？",
+                                 titleformoment:"【聚美味聚健康聚幸福】只需两步，把价值6888元WMF奈彩米新品带回家！", 
+                                 url: app.sharUrl,
+                                 icon: "http://assetscdn.createcdigital.com/wmfh520160830/assets/share-icon.jpg"
+                            };
+            app.wechat.set_sharecontent();
+
+            // update meishijie share url
+            var info = {
+                'act':'share',
+                't': uniencode('WMF携豪礼提醒您：秋运你团圆了吗'),
+                'w': uniencode('朋友，我的秋运团聚餐桌为你留了一个好位置，不点进来吗？'),
+                'p': 'http://assetscdn.createcdigital.com/wmfh520160830/assets/share-icon.jpg'.replace(/\//g, "\\/"),
+                'h': app.sharUrl.replace(/\//g, "\\/")
+            };
+            // android
+            sharecontent_formeishijie = b64EncodeUnicode(JSON.stringify(info).replace(/\\\\/g, "\\").toLowerCase().replace("\"wmf", "\"WMF"));
+            // ios
+            share_url = app.sharUrl;
+
+            // update baobaoshu share url
+            share.share_url = app.sharUrl;
+
+        }
+
+        // baobaoshu app
+        var share = {
+                'share_title' : 'WMF携豪礼提醒您：秋运你团圆了吗',
+                'share_content' : '朋友，我的秋运团聚餐桌为你留了一个好位置，不点进来吗？',
+                'image_base64': 'http://assetscdn.createcdigital.com/wmfh520160830/assets/share-icon.jpg',
+                'share_url' : 'http://www.createcdigital.com/wmfh520160830/index.php?&channel=3'
+            };
+
+        function pageLoadFinish() {
+            setTimeout(function() {
+                try {
+                    showShareButton('yes');
+                }catch(e) {}
+            }, 1000);
         }
     </script>
+
+    <!-- meishijie share interface cocde-->
+    <?php
+    if(!empty($_SERVER['HTTP_USER_AGENT'])){
+        $http_agent = strtolower(isset($_SERVER['HTTP_USER_AGENT'])?$_SERVER['HTTP_USER_AGENT']:'');
+    }else{
+        $http_agent = '';
+    }
+    ?>
+    <?php if(strpos($http_agent,'meishij') !== false):?>
+    <?php if(strpos($http_agent,'android') !== false):?>
+            <script type="text/javascript">function CallAndroidNative(){window.androidWeb.nativeMethod(sharecontent_formeishijie);}</script>
+            <div class="sharebtn_in_con_sx" onClick="CallAndroidNative()">分<br>享</div>
+    <?php else:?>
+            <script>
+                var share_url = shareurl_formeishijie;
+                var share_title = 'WMF携豪礼提醒您：秋运你团圆了吗';
+                var share_content = '朋友，我的秋运团聚餐桌为你留了一个好位置，不点进来吗？';
+                var share_img = 'http://assetscdn.createcdigital.com/wmfh520160830/assets/share-icon.jpg';
+            </script>
+            <div class="sharebtn_in_con_sx" id="sharebtn_in_con">分<br>享</div>
+            <script src="http://assetscdn.createcdigital.com/wmfh520160830/3rdparty/web_app_ios.js"></script>
+    <?php endif;?>
+    <?php endif;?>
+    <!-- end meishijie share interface cocde-->
+
+    <!-- baidu tongji-->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?f1fd947dba9937e965d77f9285267ce1";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <!-- end baidu tongji-->
 
     <!-- wechat jssdk share interface -->
     <?php include_once 'weChat/weChatShareJS.php';?>
